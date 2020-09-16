@@ -30,6 +30,10 @@ class Cart{
      * @return int 金額の合計値
      */
     function calcItemsPrice($itemIds){
-
+        $sum = 0;
+        foreach($itemIds as $id){
+            $sum += $this->calcItemPrice($id);
+        }
+        return $sum;
     }
 }

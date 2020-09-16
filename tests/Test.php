@@ -31,4 +31,13 @@ class SampleTest extends TestCase {
         $answer = 140;
         $this->assertSame($answer,$this->cart->calcItemsPrice($itemIds));
     }
+
+    function testCalcPrice(){
+        $items = [
+            ["id" => 1,"amount" => 3],
+            ["id" => 2,"amount" => 5]
+        ];
+        $answer = 500;
+        $this->assertSame($answer,$this->cart->calcPrice($items));
+    }
 }

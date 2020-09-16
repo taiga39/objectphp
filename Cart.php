@@ -26,7 +26,7 @@ class Cart{
 
     /**
      * 商品番号を複数渡す場合
-     * @param array  商品番号
+     * @param array $itemIds 商品番号
      * @return int 金額の合計値
      */
     function calcItemsPrice($itemIds){
@@ -35,5 +35,14 @@ class Cart{
             $sum += $this->calcItemPrice($id);
         }
         return $sum;
+    }
+
+    /**
+     * 商品番号と商品数を複数渡して、合計金額
+     * @param array 商品番号 個数
+     * @return int 金額
+     */
+    function calcPrice($items){
+        return 0;
     }
 }

@@ -43,6 +43,10 @@ class Cart{
      * @return int 金額
      */
     function calcPrice($items){
-        return 0;
+        $sum = 0;
+        foreach($items as $item){
+            $sum += $this->calcItemPrice($item["id"]) * $item["amount"];
+        }
+        return $sum;
     }
 }

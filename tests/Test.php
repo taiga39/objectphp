@@ -2,16 +2,24 @@
 
 require_once('vendor/autoload.php');
 
+require('Cart.php');
 use PHPUnit\Framework\TestCase;
- 
+
 class SampleTest extends TestCase {
-    public function test_add() {
-        $sample = new Sample\Sample();
-        $this->assertEquals(10, $sample->Add(4, 6));
+    private $cart;
+
+    /**
+     * テスト前に呼び出される初期化メソッド
+     */
+    public function setUp(): void
+    {
+        $this->cart = new Cart();
     }
- 
-    public function test_sub() {
-        $sample = new Sample\Sample();
-        $this->assertEquals(1, $sample->Sub(7, 6));
+
+    function testCalcItemPrice() {
+        $itemId = 1;
+        $answer = 100;
+        $this->assertSame($answer, $this->cart->calcItemPrice( $itemId ));
     }
+
 }

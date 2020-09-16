@@ -2,7 +2,7 @@
 
 require_once('vendor/autoload.php');
 
-require('Cart.php');
+require_once('Cart.php');
 use PHPUnit\Framework\TestCase;
 
 class SampleTest extends TestCase {
@@ -19,6 +19,10 @@ class SampleTest extends TestCase {
     function testCalcItemPrice() {
         $itemId = 1;
         $answer = 100;
+        $this->assertSame($answer, $this->cart->calcItemPrice( $itemId ));
+
+        $itemId = 2;
+        $answer = 40;
         $this->assertSame($answer, $this->cart->calcItemPrice( $itemId ));
     }
 

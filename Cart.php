@@ -1,6 +1,7 @@
 <?php
 
-require('Item.php');
+require_once('Item.php');
+require_once('Apple.php');
 class Cart{
 
     /**
@@ -9,8 +10,8 @@ class Cart{
      * @return int 金額
      */
     function calcItemPrice($itemId){
-        return 0;
+        $apple = new Apple();
+        return $apple->getPrice();
     }
 
 }
-?>

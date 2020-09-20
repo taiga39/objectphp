@@ -18,4 +18,10 @@ class TestItem extends TestCase {
         $answer = 100;
         $this->assertSame($answer, $this->item->getPrice());
     }
+
+    function testcalcPrice(){
+        $n = 5;
+        $answer = 500;
+        $this->assertSame($answer, $this->item->calcPrice($n));
+    }
 }

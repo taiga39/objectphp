@@ -52,17 +52,17 @@ class TestOne extends TestCase {
 
     function testItemTaxPrice(){
         $id = 1;
-        $n = 5;
-        $answer = 550;
+        $n = 2;
+        $answer = 220;
         $this->assertSame($answer,$this->cart->itemTaxPrice($id,$n));
 
     }
     function testTaxPriceTabacco(){
         $items = [
-            ["id"=>1,"amount"=>3],
+            ["id"=>1,"amount"=>2],
             ["id"=>3,"amount"=>5]
         ];
-        $answer = 2430;
+        $answer = 2320;
         $this->assertSame($answer,$this->cart->calcPriceExampleThree($items));
     }
 

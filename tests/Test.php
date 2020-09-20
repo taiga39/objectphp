@@ -43,8 +43,8 @@ class TestOne extends TestCase {
 
     function testTaxPrice(){
         $items = [
-            ["id"=>1,"amount"=>5],
-            ["id"=>2,"amount"=>3],
+            ["id"=>1,"amount"=>3],
+            ["id"=>2,"amount"=>5],
         ];
         $answer = 550;
         $this->assertSame($answer,$this->cart->calcTaxPrice($items));

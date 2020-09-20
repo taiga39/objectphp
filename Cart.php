@@ -7,8 +7,8 @@ require_once('Orange.php');
 class Cart{
 
     private $items = [
-        "Apple",
-        "Orange"
+        1 => "Apple",
+        2 => "Orange"
     ];
 
     /**
@@ -19,7 +19,7 @@ class Cart{
 
     function calcItemPrice($itemId) {
 
-        $className = $this->items[$itemId-1];
+        $className = $this->items[$itemId];
         $apple = new $className();
         return $apple->getPrice();
     }
@@ -57,6 +57,10 @@ class Cart{
      */
 
      function calcTaxPrice($items){
-        return 0;
+        $sum = 0;
+        foreach($items as $item){
+            $sum += $this->calcItemPrice($item["id"]) * $item["amount"] * 1.1;
+        }
+        return intval($sum);
      }
 }

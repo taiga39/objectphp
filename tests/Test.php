@@ -5,7 +5,7 @@ require_once('vendor/autoload.php');
 require_once('Cart.php');
 use PHPUnit\Framework\TestCase;
 
-class SampleTest extends TestCase {
+class TestOne extends TestCase {
     private $cart;
 
     /**
@@ -39,5 +39,14 @@ class SampleTest extends TestCase {
         ];
         $answer = 500;
         $this->assertSame($answer,$this->cart->calcPrice($items));
+    }
+
+    function testTaxPrice(){
+        $items = [
+            ["id"=>1,"amount"=>5],
+            ["id"=>2,"amount"=>3],
+        ];
+        $answer = 550;
+        $this->assertSame($answer,$this->cart->calcTaxPrice($items));
     }
 }

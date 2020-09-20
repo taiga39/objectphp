@@ -49,4 +49,14 @@ class Cart{
         }
         return $sum;
     }
+
+    /**
+     * 商品番号と個数を渡すと、消費税込みの金額を返すメソッド
+     * @param array 商品番号 個数
+     * @return int 合計金額
+     */
+
+     function calcTaxPrice($items){
+        return 0;
+     }
 }

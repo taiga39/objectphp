@@ -49,4 +49,13 @@ class TestOne extends TestCase {
         $answer = 550;
         $this->assertSame($answer,$this->cart->calcTaxPrice($items));
     }
+
+    function testTaxPriceTabacco(){
+        $items = [
+            ["id"=>1,"amount"=>3],
+            ["id"=>3,"amount"=>5]
+        ];
+        $answer = 2400;
+        $this->assertSame($answer,$this->cart->calcTaxPriceTabacco($items));
+    }
 }

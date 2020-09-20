@@ -8,7 +8,8 @@ class Cart{
 
     private $items = [
         1 => "Apple",
-        2 => "Orange"
+        2 => "Orange",
+        3 => "Tabacco"
     ];
 
     /**
@@ -62,5 +63,15 @@ class Cart{
             $sum += $this->calcItemPrice($item["id"]) * $item["amount"] * 1.1;
         }
         return intval($sum);
+     }
+
+    /**
+     * 商品番号と個数を渡すと、消費税込みの金額を返すメソッド、タバコは消費税を計算しない
+     * @param array 商品番号 個数
+     * @return int 合計金額
+     */
+
+    function calcTaxPriceTabacco($items){
+        return 0;
      }
 }

@@ -3,6 +3,8 @@
 require_once('Item.php');
 require_once('Apple.php');
 require_once('Orange.php');
+require_once('Tabacco.php');
+
 
 class Cart{
 
@@ -65,13 +67,25 @@ class Cart{
         return intval($sum);
      }
 
+
+    // 例題３
+
+    function itemTaxPrice($id,$n){
+        $className = $this->items[$id];
+        $item = new $className();
+        $price= $item->calcPrice($n);
+        return $price;
+    }
     /**
      * 商品番号と個数を渡すと、消費税込みの金額を返すメソッド、タバコは消費税を計算しない
      * @param array 商品番号 個数
      * @return int 合計金額
      */
-
-    function calcTaxPriceTabacco($items){
-        return 0;
+    function calcPriceExampleThree($items){
+        $sum = 0;
+        foreach($items as $item){
+            $sum += $this->itemTaxPrice($item["id"],$item["amount"]);
+        }
+        return $sum;
      }
 }

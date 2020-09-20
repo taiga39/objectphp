@@ -65,4 +65,12 @@ class TestOne extends TestCase {
         $answer = 2430;
         $this->assertSame($answer,$this->cart->calcPriceExampleThree($items));
     }
+
+    function testApplePrice(){
+        $items = [
+            ["id"=>1,"amount"=>7],
+        ];
+        $answer = 726;
+        $this->assertSame($answer,$this->cart->calcPriceExampleFour($items));
+    }
 }

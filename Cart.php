@@ -88,4 +88,19 @@ class Cart{
         }
         return $sum;
      }
+
+    // 例題4
+    /**
+     * 商品番号と個数を渡すと、消費税込みの金額を返すメソッド、りんごは３つごとに20円引き
+     * @param array 商品番号 個数
+     * @return int 合計金額
+     */
+
+    function calcPriceExampleFour($items){
+        $sum = 0;
+        foreach($items as $item){
+            $sum += $this->itemTaxPrice($item["id"],$item["amount"]);
+        }
+        return $sum;
+     }
 }

@@ -7,6 +7,12 @@ class Saving {
         $save = floor($save) * 20;
         return intval($save);
     }
+
+    function omake($amount){
+        $omake = floor($amount /10);
+        $amount = $amount - $omake;
+        return intval($amount);
+    }
 }
 
 ?>

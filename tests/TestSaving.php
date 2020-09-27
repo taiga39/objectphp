@@ -22,4 +22,10 @@ class TestSaving extends TestCase {
         $this->assertSame($answer,$this->saving->calcAppleSaving($amount));
     }
 
+    function test１０個以上の時おまけをひとつくれる(){
+        $amount = 15;
+        $answer = 14;
+        $this->assertSame($answer,$this->saving->omake($amount));
+    }
+
 }

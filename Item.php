@@ -28,9 +28,13 @@ class Item{
 
     public function calcPrice($n){
         $id = $this->getId();
+        $save = new Saving();
+
         if($id === 1){
-            $save = new Saving();
             $savesum = $save->calcAppleSaving($n);   
+        }
+        if($n  >10){
+            $n = $save->omake($n);
         }
         $price = $this->getPrice();
         $tax = $this->getTax();

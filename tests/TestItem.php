@@ -8,14 +8,6 @@ use PHPUnit\Framework\TestCase;
 class TestItem extends TestCase {
     private $item;
 
-    /**
-     * テスト前に呼び出される初期化メソッド
-     */
-    // public function setUp(): void
-    // {
-    //     $this->item = new Item(1);
-    // }
-
     function testりんごは３つで割引が適用される(){
         $this->item = new Item(1);
         $amount = 5;

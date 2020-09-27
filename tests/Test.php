@@ -38,4 +38,13 @@ class Test extends TestCase {
         $answer = 2408;
         $this->assertSame($answer,$this->cart->calcPrice($items));
     }
+
+    function testおまけが付く合計金額のテスト(){
+        $items = [
+            ["id" => 1,"amount" => 2],
+            ["id" => 2,"amount" => 11]
+        ];
+        $answer = 660;
+        $this->assertSame($answer,$this->cart->calcPrice($items));
+    }
 }

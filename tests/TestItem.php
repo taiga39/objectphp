@@ -22,4 +22,12 @@ class TestItem extends TestCase {
         $this->assertSame($answer,$this->item->calcPrice($amount));
     }
 
+    function test１０個以上ならひとつおまけがつくテスト(){
+        $this->item = new Item(2);
+        $amount = 11;
+        $answer = 440;
+        $this->assertSame($answer,$this->item->calcPrice($amount));
+        
+    }
+
 }

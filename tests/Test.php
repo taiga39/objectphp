@@ -47,4 +47,13 @@ class Test extends TestCase {
         $answer = 660;
         $this->assertSame($answer,$this->cart->calcPrice($items));
     }
+
+    function testたばこを１０個買うと、ライターのおまけが付く合計金額のテスト(){
+        $items = [
+            ["id" => 6,"amount" => 10],
+            ["id" => 8,"amount" => 1]
+        ];
+        $answer = 4200;
+        $this->assertSame($answer,$this->cart->calcPrice($items));
+    }
 }

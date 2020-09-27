@@ -16,6 +16,7 @@ class Cart{
         return $price;
     }
 
+    
     /**
      * 商品番号と個数を渡すと、全商品の合計金額を計算する関数
      * @param int $items 商品番号,個数

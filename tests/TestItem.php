@@ -1,11 +1,11 @@
 <?php
 
 require_once('vendor/autoload.php');
-
 require_once('Item.php');
+
 use PHPUnit\Framework\TestCase;
 
-class TestTwo extends TestCase {
+class TestItem extends TestCase {
     private $item;
 
     /**
@@ -13,22 +13,11 @@ class TestTwo extends TestCase {
      */
     public function setUp(): void
     {
-        $this->item = new Item();
+        $this->item = new Item(1);
     }
     function testCalcItemPrice(){
-        $items = [
-            ["id" => 1,"amount" => 3]
-        ];
-        $answer = 300;
-        $this->assertSame($answer,$this->cart->calcItemPrice($items));
-    }
-
-    function testCalcPrice(){
-        $items = [
-            ["id" => 1,"amount" => 3],
-            ["id" => 2,"amount" => 5]
-        ];
+        $amount = 5;
         $answer = 500;
-        $this->assertSame($answer,$this->cart->calcPrice($items));
+        $this->assertSame($answer,$this->item->calcPrice($amount));
     }
 }

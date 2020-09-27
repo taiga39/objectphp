@@ -15,21 +15,10 @@ class TestOne extends TestCase {
     {
         $this->cart = new Cart();
     }
-
-    function testCalcItemPrice() {
-        $itemId = 1;
-        $answer = 100;
-        $this->assertSame($answer, $this->cart->calcItemPrice( $itemId ));
-
-        $itemId = 2;
-        $answer = 40;
-        $this->assertSame($answer, $this->cart->calcItemPrice( $itemId ));
-    }
-
-    function testCalcItemsPrice(){
-        $itemIds = [1,2];
-        $answer = 140;
-        $this->assertSame($answer,$this->cart->calcItemsPrice($itemIds));
+    function testCalcItemPrice(){
+        $items = ["id" => 1,"amount" => 3];
+        $answer = 300;
+        $this->assertSame($answer,$this->cart->calcItemPrice($items));
     }
 
     function testCalcPrice(){
@@ -39,38 +28,5 @@ class TestOne extends TestCase {
         ];
         $answer = 500;
         $this->assertSame($answer,$this->cart->calcPrice($items));
-    }
-
-    function testTaxPrice(){
-        $items = [
-            ["id"=>1,"amount"=>3],
-            ["id"=>2,"amount"=>5],
-        ];
-        $answer = 550;
-        $this->assertSame($answer,$this->cart->calcTaxPrice($items));
-    }
-
-    function testItemTaxPrice(){
-        $id = 1;
-        $n = 2;
-        $answer = 220;
-        $this->assertSame($answer,$this->cart->itemTaxPrice($id,$n));
-
-    }
-    function testTaxPriceTabacco(){
-        $items = [
-            ["id"=>1,"amount"=>2],
-            ["id"=>3,"amount"=>5]
-        ];
-        $answer = 2320;
-        $this->assertSame($answer,$this->cart->calcPriceExampleThree($items));
-    }
-
-    function testApplePrice(){
-        $items = [
-            ["id"=>1,"amount"=>7],
-        ];
-        $answer = 726;
-        $this->assertSame($answer,$this->cart->calcPriceExampleFour($items));
     }
 }

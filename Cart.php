@@ -21,7 +21,6 @@ class Cart{
      * @param int $items 商品番号,個数
      * @return int 金額
      */
-
     function calcPrice($items) {
         $sum = 0;
         foreach($items as $item){

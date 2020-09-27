@@ -17,7 +17,7 @@ class TestOne extends TestCase {
     }
     function testCalcItemPrice(){
         $items = ["id" => 1,"amount" => 3];
-        $answer = 300;
+        $answer = 330;
         $this->assertSame($answer,$this->cart->calcItemPrice($items));
     }
 
@@ -26,7 +26,7 @@ class TestOne extends TestCase {
             ["id" => 1,"amount" => 3],
             ["id" => 2,"amount" => 5]
         ];
-        $answer = 500;
+        $answer = 550;
         $this->assertSame($answer,$this->cart->calcPrice($items));
     }
 }

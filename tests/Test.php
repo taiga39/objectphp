@@ -29,4 +29,13 @@ class TestOne extends TestCase {
         $answer = 550;
         $this->assertSame($answer,$this->cart->calcPrice($items));
     }
+
+    function testたばこを含んだ合計金額のテスト(){
+        $items = [
+            ["id" => 1,"amount" => 3],
+            ["id" => 6,"amount" => 5]
+        ];
+        $answer = 2430;
+        $this->assertSame($answer,$this->cart->calcPrice($items));
+    }
 }

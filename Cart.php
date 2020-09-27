@@ -23,7 +23,12 @@ class Cart{
      */
 
     function calcPrice($items) {
-        return 0;
+        $sum = 0;
+        foreach($items as $item){
+            $price = $this->calcItemPrice($item);
+            $sum += $price;
+        }
+        return $sum;
     }
 
 }

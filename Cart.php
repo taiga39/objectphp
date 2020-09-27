@@ -24,6 +24,8 @@ class Cart{
      * @return int 金額
      */
     function calcPrice($items) {
+        $save = new Saving();
+        $items = $save->omakeLighter($items);
         $sum = 0;
         foreach($items as $item){
             $price = $this->calcItemPrice($item);

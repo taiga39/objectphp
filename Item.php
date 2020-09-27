@@ -33,7 +33,7 @@ class Item{
         if($id === 1){
             $savesum = $save->calcAppleSaving($n);   
         }
-        if($n  >10){
+        if($n > 10){
             $n = $save->omake($n);
         }
         $price = $this->getPrice();

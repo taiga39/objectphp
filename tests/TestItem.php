@@ -30,4 +30,11 @@ class TestItem extends TestCase {
         
     }
 
+    function test２０個みかんを買うとおまけがつくテスト(){
+        $this->item = new Item(2);
+        $amount = 20;
+        $answer = 836;
+        $this->assertSame($answer,$this->item->calcPrice($amount));
+        
+    }
 }

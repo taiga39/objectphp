@@ -9,9 +9,13 @@ class Saving {
     }
 
     function omake($amount){
-        $omake = floor($amount /10);
+        $omake = floor(($amount-1) /10);
         $amount = $amount - $omake;
         return intval($amount);
+    }
+
+    function lighterOmake($items){
+
     }
 }
 

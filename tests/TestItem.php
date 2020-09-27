@@ -17,7 +17,7 @@ class TestItem extends TestCase {
     }
     function testCalcItemPrice(){
         $amount = 5;
-        $answer = 500;
+        $answer = 550;
         $this->assertSame($answer,$this->item->calcPrice($amount));
     }
 }

@@ -16,10 +16,10 @@ class TestItem extends TestCase {
     //     $this->item = new Item(1);
     // }
 
-    function test商品の個数を入れると金額を返すテストりんご(){
+    function testりんごは３つで割引が適用される(){
         $this->item = new Item(1);
         $amount = 5;
-        $answer = 550;
+        $answer = 528;
         $this->assertSame($answer,$this->item->calcPrice($amount));
     }
 
@@ -29,4 +29,5 @@ class TestItem extends TestCase {
         $answer = 840;
         $this->assertSame($answer,$this->item->calcPrice($amount));
     }
+
 }

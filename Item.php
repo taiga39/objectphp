@@ -2,17 +2,22 @@
 require_once('Data.php');
 
 class Item{
-    
+    protected $id;
     protected $price;
     protected $tax;
 
 
     public function __construct($id){
-        // $this->$price = ITEMDATA[$id]["price"];
+        $this->id = $id;
         $this->price = ITEMDATA[$id]["price"];
         $this->tax = ITEMDATA[$id]["tax"];
 
     }
+
+    public function getId(){
+        return $this->id;
+    }
+
     public function getPrice(){
         return $this->price;
     }
@@ -22,6 +27,7 @@ class Item{
     }
 
     public function calcPrice($n){
+
         $price = $this->getPrice();
         $tax = $this->getTax();
         $sum = $price * $n * $tax;

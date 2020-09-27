@@ -5,7 +5,7 @@ require_once('vendor/autoload.php');
 require_once('Cart.php');
 use PHPUnit\Framework\TestCase;
 
-class TestOne extends TestCase {
+class Test extends TestCase {
     private $cart;
 
     /**
@@ -26,7 +26,7 @@ class TestOne extends TestCase {
             ["id" => 1,"amount" => 3],
             ["id" => 2,"amount" => 5]
         ];
-        $answer = 550;
+        $answer = 508;
         $this->assertSame($answer,$this->cart->calcPrice($items));
     }
 
@@ -35,7 +35,7 @@ class TestOne extends TestCase {
             ["id" => 1,"amount" => 3],
             ["id" => 6,"amount" => 5]
         ];
-        $answer = 2430;
+        $answer = 2408;
         $this->assertSame($answer,$this->cart->calcPrice($items));
     }
 }

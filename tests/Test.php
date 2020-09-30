@@ -13,7 +13,7 @@ class Test extends TestCase {
      */
     public function setUp(): void
     {
-        $this->cart = new Cart();
+        $this->cart = new Carts();
     }
     function testCalcItemPrice(){
         $items = ["id" => 1,"amount" => 3];

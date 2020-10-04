@@ -15,10 +15,12 @@ class Test extends TestCase {
     {
         $this->cart = new Cart();
     }
-    function testCalcItemPrice(){
-        $items = ["id" => 1,"amount" => 3];
+    function testCalcOnlyApplePrice(){
+        $items = [
+            ["id" => 1,"amount" => 3]
+        ];
         $answer = 308;
-        $this->assertSame($answer,$this->cart->calcItemPrice($items));
+        $this->assertSame($answer,$this->cart->calcPrice($items));
     }
 
     function testCalcPrice(){

@@ -12,8 +12,8 @@ class Cart{
      */
 
     function calcItemPrice($items) {
-        $item = new Item($items["id"]);
-        $price = $item->calcPrice($items["amount"]);
+        $item = new Item($items);
+        $price = $item->calcPrice();
         return $price;
     }
 
@@ -25,7 +25,7 @@ class Cart{
      */
     function calcPrice($items) {
         $save = new Saving();
-        $items = $save->omakeLighter($items);
+        $items = $save->savingCalc($items);
         $sum = 0;
         foreach($items as $item){
             $price = $this->calcItemPrice($item);

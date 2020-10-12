@@ -25,7 +25,7 @@
     $result_tabacco = array_search(6, $idarr);
     $result_lighter = array_search(8, $idarr);
 
-
+    $result = array_intersect([1], $items);
     if(is_int($result_apple)){
         $amount = $items[$result_apple]["amount"];
         $save = calcAppleSaving($amount);
@@ -38,9 +38,9 @@
     }
 
     if(is_int($result_tabacco) && is_int($result_lighter)){
-        unset($items[$result_lighter]);
-        $items = array_values($items);
+        $count = floor($items[$result_tabacco]["amount"] /10);
+        // $items[$result_lighter]["amount"] - (int)$count;
+        $items[$result_lighter]["amount"] = $items[$result_lighter]["amount"] - 1;
     }
 
-    // return $items;
-    var_dump($items);
+    var_dump($result);

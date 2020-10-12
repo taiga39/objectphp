@@ -8,14 +8,11 @@ class Item{
     protected $price;
     protected $tax;
     protected $amount;
-    protected $save = 0;
 
-    public function __construct($item){
-        $this->id = $item["id"];
-        $this->price = ITEMDATA[$item["id"]]["price"];
-        $this->tax = ITEMDATA[$item["id"]]["tax"];
-        $this->amount = $item["amount"];
-        $this->save = $item["save"];
+    public function __construct($id){
+        $this->id = $id;
+        $this->price = ITEMDATA[$id]["price"];
+        $this->tax = ITEMDATA[$id]["tax"];
     }
 
     public function getId(){
@@ -38,13 +35,14 @@ class Item{
         return $this->save;
     }
 
+    public function setAmount($n){
+        $this->amount = $n;
+    }
     public function calcPrice(){
         $price = $this->getPrice();
         $tax = $this->getTax();
         $amount = $this->getAmount();
-        $save = $this->getSave();
-        $sum = ($price * $amount - $save) * $tax;
+        $sum = $price * $amount * $tax;
         return intval($sum);
-
     }
 }
